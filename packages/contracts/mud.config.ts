@@ -7,8 +7,23 @@ export default defineWorld({
   namespaces: {
     ggg: {
       tables: {
+        Checker: {
+          schema: {
+            a: "uint256",
+            b: "uint256",
+            aIsB: "bool",
+          },
+          key: ["a", "b"],
+        },
         Inventory: "bool",
         Item: "bool",
+        Hero: {
+          id: "uint256",
+          health: "uint256",
+          attack: "uint256",
+        },
+        Health: "uint256",
+        Attack: "uint256",
       },
     },
     app: {

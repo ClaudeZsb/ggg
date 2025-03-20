@@ -4,6 +4,9 @@ export default defineWorld({
   enums: {
     Direction: ["North", "East", "South", "West"],
   },
+  codegen: {
+    generateSystemLibraries: true,
+  },
   namespaces: {
     ggg: {
       tables: {
@@ -15,13 +18,18 @@ export default defineWorld({
           },
           key: ["a", "b"],
         },
+        Generic: {
+          schema: {
+            id: "bytes32",
+            value: "bytes",
+          },
+          key: ["id"],
+          codegen: {
+            tableIdArgument: true,
+          },
+        },
         Inventory: "bool",
         Item: "bool",
-        Hero: {
-          id: "uint256",
-          health: "uint256",
-          attack: "uint256",
-        },
         Health: "uint256",
         Attack: "uint256",
       },
